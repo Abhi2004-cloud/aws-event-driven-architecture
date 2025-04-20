@@ -12,10 +12,10 @@
         "sqs:ReceiveMessage",
         "sqs:sendMessage"
       ],
-      "Resource": "arn:aws:sqs:<region>:<accountId>:<sqsQueueName>",
+      "Resource": "arn:aws:sqs:us-east-1:855675737036:queue1",
       "Condition": {
         "ArnEquals": {
-          "aws:SourceArn": "arn:aws:lambda:<region>:<accountId>:<lambdaName>"
+          "aws:SourceArn": "arn:aws:lambda:us-east-1:855675737036:myLambda1"
         }
       }
     },
@@ -26,10 +26,10 @@
         "AWS": "*"
       },
       "Action": "sqs:SendMessage",
-      "Resource": "arn:aws:sqs:<region>:<accountId>:<sqsQueueName>",
+      "Resource": "arn:aws:sqs:us-east-1:855675737036:queue1",
       "Condition": {
         "ArnLike": {
-          "aws:SourceArn": "arn:aws:sns:<region>:<accountId>:<snsTopicName>"
+          "aws:SourceArn": "arn:aws:sns:us-east-1:855675737036:myTopic"
         }
       }
     }
